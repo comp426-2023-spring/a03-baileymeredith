@@ -4,7 +4,7 @@ import minimist from minimist
 
 const args = minimist(process.argv.slice(2));
 
-if (args.h) {
+if (args.h || args.help) {
     console.log('Usage: node-rpsls [SHOT]\n',
     'Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!\n',
     '\n',
@@ -19,7 +19,7 @@ if (args.h) {
     process.exit(0)
 }
 
-if (args.r) {
+if (args.r || args.rules) {
     console.log('Rules for the Lizard-Spock Expansion of Rock Paper Scissors:\n',
     '\n',
     '  - Scissors CUTS Paper\n',
