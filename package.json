@@ -12,8 +12,15 @@
   },
   "author": "@baileymeredith",
   "license": "MIT",
+  "bin": {
+    "node-rps": "./bin/rps-cli.js",
+    "node-rpsls": "rpsls-cli.js"
+  },
   "bugs": {
     "url": "https://github.com/comp426-2023-spring/a03-baileymeredith/issues"
   },
-  "homepage": "https://github.com/comp426-2023-spring/a03-baileymeredith#readme"
+  "homepage": "https://github.com/comp426-2023-spring/a03-baileymeredith#readme",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
 }
