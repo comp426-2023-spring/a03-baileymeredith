@@ -13,15 +13,13 @@ if (args.r || args.rules) {
     process.exit(0);
 }
 const move = args._[0]
-if (move) {
-    try {
-        gameObject = rps(move)
-        console.log(JSON.stringify(rpsls(gameObject)))
-    } catch (e) {
-        helpMessage()
-        ruleMessage()
-        process.exit(0)
-    }
+try {
+    gameObject = rps(move)
+    console.log(JSON.stringify(rpsls(gameObject)))
+} catch (e) {
+    helpMessage()
+    ruleMessage()
+    process.exit(0)
 }
 
 function helpMessage() {
