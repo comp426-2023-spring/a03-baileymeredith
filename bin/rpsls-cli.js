@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// import { rpsls } from 'node-rpsls'
+import { rpsls } from 'node-rpsls'
 import minimist from 'minimist';
 
 const args = minimist(process.argv.slice(2));
@@ -12,11 +12,12 @@ if (args.r || args.rules) {
     ruleMessage();
     process.exit(0);
 }
-if (args._[0]) {
+const move = args._[0]
+if (move) {
     try {
-        // add code here
-        // console.log(JSON.Stringify the object returned from rpsls functions)
-    } catch {
+        gameObject = rps(move)
+        console.log(JSON.stringify(rpsls(gameObject)))
+    } catch (e) {
         helpMessage()
         ruleMessage()
         process.exit(0)

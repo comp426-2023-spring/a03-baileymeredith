@@ -12,16 +12,15 @@ if (args.r || args.rules) {
     ruleMessage();
     process.exit(0);
 }
+const move = args._[0]
 try {
-    const move = args._[0]
-    const gameObject = rps(move);
-    console.log(JSON.stringify(gameObject));
-} catch {
+    gameObject = rps(move)
+    console.log(JSON.stringify(rps(gameObject)));
+} catch (e){
     helpMessage()
     ruleMessage()
     process.exit(0)
 }
-
 
 
 function helpMessage() {
@@ -32,7 +31,6 @@ function helpMessage() {
     '                  e.g. {"player":"rock"}\n',
     '  node-rps rock   Return JSON with results for RPS played against a simulated opponent.\n',
     '                  e.g {"player":"rock","opponent":"scissors","result":"win"}')
-    process.exit(0)
 }
 
 function ruleMessage() {
